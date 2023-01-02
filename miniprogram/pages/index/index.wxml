@@ -1,5 +1,8 @@
 <view class="page-body">
+  <!-- sssssssssss -->
   <view class="page-section page-section-gap">
-    <web-view src="{{src}}" bindmessage="onMessage" bindload="onLoad" wx:if="{{!hideWebview}}"></web-view>
+    <!-- <button bindtap="onTab">1111</button> -->
+    
+    <web-view src="{{src}}" bindmessage="onMessage" bindload="onLoad" wx:if="{{!hideWebview}}"/>
   </view>
 </view>

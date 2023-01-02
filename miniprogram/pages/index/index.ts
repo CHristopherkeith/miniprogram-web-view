@@ -4,7 +4,7 @@ let app = getApp<IAppOption>();
 
 Page({
   data: {
-    src: "http://localhost:8080/#/",
+    src: "http://192.168.0.106:8080/#/",
     shouldReattachWebview: false, // 是否需要重新 attach 一次 webview 组件
     webviewReattached: false, // 是否已经 attach 过一次 webview 了
     hideWebview: false, // 是否隐藏 webview 组件
@@ -33,6 +33,9 @@ Page({
     //   );
     // }
   },
+  onTab(event: any):void{
+    console.log(event, "[event from onTab index]")
+  },
   // 事件处理函数
   onMessage(event: any): void {
     console.log(event, "[event from onMessage index]");
@@ -41,7 +44,16 @@ Page({
   onLoad(event: any): void {
     console.log(event, "[event from onLoad index]");
     // wx.navigateTo({url: '/pages/placeholder/placeholder'})
-    
+    // setTimeout(() => {
+    //   this.setData({
+    //     hideWebview: true
+    //   })
+    //   setTimeout(() => {
+    //     this.setData({
+    //       hideWebview: false
+    //     })
+    //   }, 2000);
+    // }, 2000);
   },
   onShareAppMessage(): any {
     return {
